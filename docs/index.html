@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>超市营业额可视化分析平台</title>
+    <style>
+      body {
+        font-family: 'Microsoft YaHei', Arial, sans-serif;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f5f5f5;
+      }
+      .header {
+        text-align: center;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 30px;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      }
+      .chart-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        margin-bottom: 30px;
+      }
+      .chart-category {
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+      }
+      .chart-category:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      }
+      .category-title {
+        color: #333;
+        border-bottom: 2px solid #667eea;
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+        font-size: 1.3em;
+      }
+      .chart-list {
+        list-style: none;
+        padding: 0;
+      }
+      .chart-list li {
+        margin-bottom: 12px;
+        padding: 10px;
+        background: #f8f9fa;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+      .chart-list li:hover {
+        background: #e9ecef;
+      }
+      .chart-list a {
+        text-decoration: none;
+        color: #495057;
+        display: block;
+        font-weight: 500;
+      }
+      .chart-list a:hover {
+        color: #667eea;
+      }
+      .footer {
+        text-align: center;
+        margin-top: 40px;
+        padding: 20px;
+        color: #6c757d;
+        font-size: 0.9em;
+      }
+      .description {
+        color: #666;
+        font-size: 0.9em;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>🏪 超市营业额可视化分析平台</h1>
+      <p>基于Python + ECharts的大数据可视化项目 | 重庆邮电大学经济管理学院</p>
+    </div>
+
+    <div class="chart-grid">
+      <!-- 基础分析图表 -->
+      <div class="chart-category">
+        <h2 class="category-title">📊 基础销售分析</h2>
+        <ul class="chart-list">
+          <li>
+            <a href="counter_sales.html">各柜台总交易额分析</a>
+            <div class="description">展示不同柜台的销售总额对比</div>
+          </li>
+          <li>
+            <a href="time_sales.html">不同时段总交易额分析</a>
+            <div class="description">分析上午vs下午时段的销售表现</div>
+          </li>
+          <li>
+            <a href="employee_sales.html">各员工总交易额分析</a>
+            <div class="description">员工个人销售业绩排名分析</div>
+          </li>
+          <li>
+            <a href="daily_trend.html">每日总交易额趋势分析</a>
+            <div class="description">展示每日销售额的变化趋势</div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 深度分析图表 -->
+      <div class="chart-category">
+        <h2 class="category-title">🔍 深度业务洞察</h2>
+        <ul class="chart-list">
+          <li>
+            <a href="monthly_comparison.html">月度销售额对比分析</a>
+            <div class="description">3月与4月销售表现的对比分析</div>
+          </li>
+          <li>
+            <a href="rank_performance.html">各职级绩效分析</a>
+            <div class="description">不同职级员工的销售绩效对比</div>
+          </li>
+          <li>
+            <a href="employee_scatter.html">员工绩效散点分析</a>
+            <div class="description">交易次数与总额的关联分析</div>
+          </li>
+          <li>
+            <a href="heatmap_sales.html">时段-柜台销售热度图</a>
+            <div class="description">热力图展示销售热点分布</div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 数据概览 -->
+      <div class="chart-category">
+        <h2 class="category-title">📈 数据统计概览</h2>
+        <div style="padding: 15px;">
+          <h3>数据集信息</h3>
+          <p><strong>数据期间：</strong>2019年3月-4月</p>
+          <p><strong>员工数量：</strong>7人（含不同职级）</p>
+          <p><strong>柜台分类：</strong>4个主要品类</p>
+          <p><strong>时段划分：</strong>上午/下午两个时段</p>
+
+          <h3 style="margin-top: 20px;">技术特性</h3>
+          <p>✅ 交互式数据可视化</p>
+          <p>✅ 响应式图表设计</p>
+          <p>✅ 色盲友好配色方案</p>
+          <p>✅ 移动端适配</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 二维码区域 -->
+    <div class="chart-category">
+      <h2 class="category-title">📱 移动端访问</h2>
+      <div style="text-align: center; padding: 20px;">
+        <p>扫描二维码在手机上查看交互图表：</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-top: 20px;">
+          <div>
+            <p><strong>柜台销售</strong></p>
+            <img src="qrcode/图1-1-柜台销售额.png" alt="柜台销售额二维码" style="width: 100px; height: 100px;">
+          </div>
+          <div>
+            <p><strong>时段分析</strong></p>
+            <img src="qrcode/图1-2-时段销售额.png" alt="时段销售额二维码" style="width: 100px; height: 100px;">
+          </div>
+          <div>
+            <p><strong>月度对比</strong></p>
+            <img src="qrcode/图1-5-月度对比.png" alt="月度对比二维码" style="width: 100px; height: 100px;">
+          </div>
+          <div>
+            <p><strong>职级绩效</strong></p>
+            <img src="qrcode/图1-6-职级绩效.png" alt="职级绩效二维码" style="width: 100px; height: 100px;">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>© 2025 重庆邮电大学经济管理学院 | 大数据可视化课程项目</p>
+      <p>学生：罗晶晶 | 学号：2023211529 | 指导教师：余海燕</p>
+      <p>技术支持：Python + ECharts + GitHub Pages</p>
+    </div>
+  </body>
+</html>
